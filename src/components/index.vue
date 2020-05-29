@@ -1,9 +1,11 @@
 <template>
     <div class="index">
+        <div class="title">
+            <p>在线软件商店</p>
+        </div>
         <div class="manage">
             <button class="manage-btn">管理</button>
         </div>
-
         <PicItem></PicItem>
     </div>
 </template>
@@ -22,14 +24,20 @@
     .index{
         padding: 20px 0;
     }
+    .title{
+        background: palegoldenrod;
+        font-size: 28px;
+        width: 200px;
+        margin: 0 auto;
+    }
     .manage{
         width: 60px;
         height: 30px;
         margin: 20px;
-        margin-left: 92%;
+        margin-left: 85%;
     }
     .manage-btn{
-        width: 60px;
+        width: 150px;
         height: 30px;
 
     }

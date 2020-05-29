@@ -1,19 +1,19 @@
 <template>
   <div id="app">
-    <index></index>
-<!--    <manager-delete></manager-delete>-->
+<!--    <index></index>-->
+    <manager-delete></manager-delete>
   </div>
 </template>
 
 <script>
-import Index from './components/index.vue'
-// import ManagerDelete from './components/manager_delete.vue'
+// import Index from './components/index.vue'
+import ManagerDelete from './components/manager_delete.vue'
 
 export default {
   name: 'App',
   components: {
-    Index,
-    // ManagerDelete
+    // Index,
+    ManagerDelete
   }
 }
 </script>

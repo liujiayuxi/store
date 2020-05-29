@@ -2,9 +2,24 @@
     <div class="pic_item">
         <div class="item" v-for="(item,index) in storelist" :key="index">
             <img class="pic" src="../assets/pic.png">
-            <p class="name">{{item.name}}</p>
-            <button @click="load(item)" v-if="item.willload">下载</button>
-            <button disabled="disabled" v-else>已下载</button>
+            <div class="word">
+                <p class="line">
+                    <span class="name">{{item.name}}</span>
+                </p>
+                <p class="line">
+                    <span class="version">版本 {{item.version}}</span>
+                    <span class="size">大小 {{item.size}}</span>
+                </p>
+                <p class="line">
+                    <span class="time">更新时间 {{item.time}}</span>
+                </p>
+                <p class="line">
+                    <button @click="load(item)" v-if="item.willload">下载</button>
+                    <button disabled="disabled" v-else>已下载</button>
+                </p>
+            </div>
+<!--            <p class="name">{{item.name}}</p>-->
+
         </div>
     </div>
 
@@ -18,39 +33,75 @@
                 storelist:[
                     {
                         name:'王者荣耀',
+                        version:'0.0.1',
+                        size:'2.0G',
+                        time:'2020-05-26',
                         willload: true
                     },{
                         name:'和平精英',
+                        version:'4.0.1',
+                        size:'1.78G',
+                        time:'2020-04-23',
                         willload: true
                     },{
                         name:'开心消消乐',
+                        version:'0.2.1',
+                        size:'50.8M',
+                        time:'2020-03-20',
                         willload: true
                     },{
                         name:'网易云音乐',
+                        version:'2.0.1',
+                        size:'248.0M',
+                        time:'2020-04-10',
                         willload: true
                     },{
                         name:'QQ音乐',
+                        version:'0.3.1',
+                        size:'498.0M',
+                        time:'2020-03-28',
                         willload: true
                     },{
                         name:'微信',
+                        version:'3.0.1',
+                        size:'1.2G',
+                        time:'2020-04-15',
                         willload: true
                     },{
                         name:'微博',
+                        version:'0.0.2',
+                        size:'939M',
+                        time:'2020-04-30',
                         willload: true
                     },{
                         name:'QQ',
+                        version:'0.2.1',
+                        size:'1.35G',
+                        time:'2020-05-08',
                         willload: true
                     },{
                         name:'盒马生鲜',
+                        version:'2.0.1',
+                        size:'518.0M',
+                        time:'2020-05-04',
                         willload: true
                     },{
                         name:'抖音段视频',
+                        version:'1.0.1',
+                        size:'128.0M',
+                        time:'2020-05-17',
                         willload: true
                     },{
                         name:'火山小视频',
+                        version:'0.1.1',
+                        size:'98.0M',
+                        time:'2020-04-12',
                         willload: true
                     },{
                         name:'支付宝',
+                        version:'1.0.0',
+                        size:'635.0M',
+                        time:'2020-05-24',
                         willload: true
                     }]
             }
@@ -74,10 +125,34 @@
     }
     .item{
         display: inline-block;
+        width: 350px;
         margin: 30px;
+        background: rgba(255, 255, 255, 1);
+        box-shadow: 0px 0px 8px 0px rgba(0, 24, 16, 0.08);
+        border-radius: 4px;
+        margin: 20px;
+        padding: 24px;
     }
     .pic{
-        width: 60px;
-        height: 48px;
+        display: inline-block;
+        width: 100px;
+        height: 80px;
+    }
+    .word{
+        display: inline-block;
+        vertical-align: top;
+    }
+    .line{
+        margin: 6px;
+    }
+    .name{
+        font-size: 20px;
+    }
+    span{
+        margin: 8px;
+    }
+    button{
+        width: 150px;
+        height: 30px;
     }
 </style>
