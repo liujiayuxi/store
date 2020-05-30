@@ -130,14 +130,7 @@
             }
         },
         mounted(){
-            this.$axios.get('/getList').then(res => {
-                let data = res.data;
-                data.forEach(item => {
-                    this.storelist.push(item);
-                })
-            }).catch(e => {
-                console.log(e);
-            })
+            this.getData();
         },
         methods:{
             deleteItem(id){
@@ -155,6 +148,17 @@
                 }).then(res => {
                     let message = res.data.msg;
                     alert(message);
+                    this.getData();
+                }).catch(e => {
+                    console.log(e);
+                })
+            },
+            getData(){
+                this.$axios.get('/getList').then(res => {
+                    let data = res.data;
+                    data.forEach(item => {
+                        this.storelist.push(item);
+                    })
                 }).catch(e => {
                     console.log(e);
                 })
