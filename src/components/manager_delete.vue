@@ -142,9 +142,9 @@
                 // },2000)
                 this.$axios({
                     method: 'post',
-                    url: '/deleteApp',
+                    url: `/admin/deleteApp/${id}`,
                     contentType: 'application/x-www-form-urlencoded',
-                    data: {id},
+                    // data: {id},
                 }).then(res => {
                     let message = res.data.msg;
                     alert(message);
@@ -154,8 +154,11 @@
                 })
             },
             getData(){
+                if(this.storelist.length != 0){
+                    this.storelist.splice(0, this.storelist.length);
+                }
                 this.$axios.get('/getList').then(res => {
-                    let data = res.data;
+                    let data = res.data.data;
                     data.forEach(item => {
                         this.storelist.push(item);
                     })
